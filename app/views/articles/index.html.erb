@@ -1,23 +1,27 @@
-<h1>Articles listing page</h1>
-<table>
- <thead>
-  <th>
-   Title
-  </th>
-  <th>
-   Description
-  </th>
-  <th>
-   Actions
-  </th>
- </thead>
- <tbody>
+
+<div class="page-content">
+
+<h1 class="text-center mt-4">listing all articles</h1>
  <% @articles.each do |article| %>
-  <tr>
-   <td><%= article.title%></td>
-   <td><%= article.description %></td>
-   <td>Placeholder</td>
-  </tr>
-  <% end %>
- </tbody>
-</table>
+ <div class="row justify-content-md-center">
+  <div class="col-8 mt-4">
+<div class="card text-center">
+  <div class="card-header font-italic">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to  article.title, article_path(article), class: "text-success" %></h5>
+    <p class="card-text"><%= article.description %></p>
+    <a href="#" class="btn btn-outline-success">View</a>
+    <a href="#" class="btn btn-outline-info">Edit</a>
+    <a href="#" class="btn btn-outline-danger">Delete</a>
+  </div>
+  <div class="card-footer text-muted">
+    <small>Created <%= time_ago_in_words(article.created_at) %> Ago,
+    Edited <%= time_ago_in_words(article.updated_at)%></small>
+  </div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
