@@ -9,7 +9,7 @@
     Featured
   </div>
   <div class="card-body">
-    <p class="card-text"><%= @article.description %></p>
+    <p class="card-text text-left"><%= @article.description %></p>
     <%= link_to  "View", article_path(@article), class: "btn btn-outline-success" %>
     <%= link_to  "Edit", edit_article_path(@article), class: "btn btn-outline-info" %>
     <%= link_to  "Delete", article_path, class:"btn btn-outline-danger" %>
