@@ -11,8 +11,10 @@
 
   <body>
   <%= render 'layouts/navigation' %>
+  <div class="page-content">
      <%= render 'layouts/messages' %>
     <%= yield %>
-    <footer>
+    </div>
+    <%= render 'layouts/footer'%>
   </body>
 </html>
