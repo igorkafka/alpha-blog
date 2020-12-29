@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_224913) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "user"
+    t.string "email"
   end
 
 end
