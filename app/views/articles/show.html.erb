@@ -6,7 +6,7 @@
 <div class="card text-center">
   <div class="card-header font-italic">
   <% if @article.user %>
-    by <%  link_to @article.user.username, user_path(@article.user) %>
+    by <%  link_to @article.user.name, user_path(@article.user) %>
     <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
   <% end %>  
   </div>

@@ -43,7 +43,6 @@ class ArticlesController < ApplicationController
 
     def set_article
         @article = Article.find(params[:id])
-        = Article.paginate(page: params[:page], per_page: 30)
     end
 
     def article_params

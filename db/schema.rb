@@ -10,22 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_105308) do
+ActiveRecord::Schema.define(version: 2021_01_03_142533) do
 
-  create_table "articles", force: :cascade do |t|
+  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.text "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
+  create_table "user_role", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
     t.string "password_digest"
+    t.bigint "user_role_id"
+    t.index ["user_role_id"], name: "fk_rails_fa83e8f093"
   end
 
+  add_foreign_key "users", "user_role"
 end
